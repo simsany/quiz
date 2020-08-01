@@ -38,7 +38,7 @@
 			
 			
 			<input style="
-    width: 8%;
+    width: 8%;"
     " id="<%=questions[i].answers[0]%>" class="form-check-input" type="radio" name="<%=i%>" >
 			<label for="<%=questions[i].answers[0]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[0]%></label>
 		<br>
@@ -46,19 +46,19 @@
 			
 <div class="form-group">
 		<input style="
-    width: 8%; id="<%=questions[i].answers[1]%>" class="form-check-input" type="radio" name="<%=i%>" >
+    width: 8%;" id="<%=questions[i].answers[1]%>" class="form-check-input" type="radio" name="<%=i%>" >
 		<label for="<%=questions[i].answers[1]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[1]%></label><br>
 		</div>
 		
 
 <div class="form-group">
 		<input style="
-    width: 8%; id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>" >
+    width: 8%; "id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>" >
 		<label for="<%=questions[i].answers[2]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
 		</div>
 		
 		<input style="
-    width: 8%; id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>" >
+    width: 8%;" id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>" >
 <div class="form-group">
 		<label for="<%=questions[i].answers[3]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
 		</div>
@@ -89,7 +89,7 @@ var question=<%-JSON.stringify(question)%>
 for(var i=0;i<radio.length/4;i++){
 
 questions.push(question[i])}
-var correctAns=0;
+
 
 
 
@@ -97,7 +97,7 @@ var correct=[]
 var button=document.querySelector("button");
 var radio=document.querySelectorAll("input[type='radio']");
 button.onclick=()=>{var data = JSON.stringify(questions);
-
+var correctAns=0;
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 
@@ -105,26 +105,22 @@ xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
     correct=JSON.parse(this.responseText);
 	
-  for(var i=0; i<radio.length;i++){
-if(radio[i].checked){if(radio[i].id!=correct[parseInt(radio[i].name)]){
+  for(var n=0; n<radio.length;n++){
+if(radio[n].id==correct[parseInt(radio[n].name)]){
+if(radio[n].checked){correctAns++}
 
-radio[i].nextElementSibling.innerHTML=radio[i].nextElementSibling.innerHTML.fontcolor("red")
+radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("green")
 
-}else{correctAns++}
-
+}else if(radio[n].checked){
+radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("red")
 }
-if(radio[i].id==correct[parseInt(radio[i].name)]){
-
-radio[i].nextElementSibling.innerHTML=radio[i].nextElementSibling.innerHTML.fontcolor("green")
-
+}
+alert(`Az eredmenyed: ${((correctAns/(radio.length/4))*100).toFixed(2)}%`)
 }
 
-
-}
-alert(`Az eredmenyed: ${((correctAns/(radio.length/4))*100).toFixed(2)}%`)}
 });
 
-xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
+xhr.open("POST", "http://127.0.0.1:5500/answers");
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("cache-control", "no-cache");
 
