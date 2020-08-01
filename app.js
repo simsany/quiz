@@ -75,7 +75,7 @@ var body=i.split(",")}
 	
 	Question.find().where('_id').in(body).exec((err,found)=>{
 		if(err){console.log("errrrroooor")}
-		else{console.log(found)
+		else{
 		for(let k=0;k<found.length;k++){
 			correct.push(found[k].answers[0])}
 		}

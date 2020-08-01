@@ -1,5 +1,14 @@
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Quiz</title>
+</head>
+<body>
 
 <div class="container" >
 
@@ -19,7 +28,7 @@
 		
 		<div>
 			
-			<textarea class="form-control" type="text" name="quiz[text]" rows="5"  readonly > <%=questions[i].text%>
+			<textarea class="form-control" type="text" name="quiz[text]" rows="5"  readonly ><%=questions[i].text%>
 			</textarea>
 			<br>
 		</div>
@@ -82,7 +91,7 @@ var correctAns=0;
 var correct=[]
 var button=document.querySelector("button");
 var radio=document.querySelectorAll("input[type='radio']");
-button.onclick=()=>{console.log(questions); var data = JSON.stringify(questions);
+button.onclick=()=>{var data = JSON.stringify(questions);
 
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
@@ -90,7 +99,7 @@ xhr.withCredentials = true;
 xhr.addEventListener("readystatechange", function () {
   if (this.readyState === 4) {
     correct=JSON.parse(this.responseText);
-	console.log(correct)
+	
   for(var i=0; i<radio.length;i++){
 if(radio[i].checked){if(radio[i].id!=correct[parseInt(radio[i].name)]){
 
@@ -110,7 +119,7 @@ radio[i].nextElementSibling.innerHTML=radio[i].nextElementSibling.innerHTML.font
 alert(`Az eredmenyed: ${((correctAns/(radio.length/4))*100).toFixed(2)}%`)}
 });
 
-xhr.open("POST", "http://127.0.0.1:5500/answers");
+xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("cache-control", "no-cache");
 
@@ -121,3 +130,5 @@ xhr.send(data);
 }
 
 </script>
+</body>
+</html>
