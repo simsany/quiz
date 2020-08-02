@@ -14,11 +14,11 @@
 
     <div class="container">
 
-        <h1 style="text-align:center"> Questions </h1><br><br>
+        <h1 style="text-align:center margin-bottom:3rem;"> Questions </h1><br><br>
         <div class="form-group" style="text-align:center">
             <a style="width:15rem; margin-bottom:0.5rem;" href="/show" class="btn btn-success btn-lg ">Question bank</a>&nbsp;&nbsp;
             <a style="width:15rem; margin-bottom:0.5rem;" href="/new" class="btn btn-success btn-lg ">Add new question</a>&nbsp;
-            <a style="width:15rem; margin-bottom: 3rem;" href="/" class="btn btn-success btn-lg ">New round</a>
+            <a style="width:15rem; margin-bottom: 0.5rem;" href="/" class="btn btn-success btn-lg ">New round</a>
         </div>
 
 
@@ -85,7 +85,7 @@
 
 
 <%if(questions.length){%>
-            <div style="text-align:center;" class="form-group">
+            <div style="text-align:center; margin-top:3rem;" class="form-group">
                 <button style="width:15rem;"type="button" class="btn btn-success btn-lg ">Results</button>
             </div>
             <%}%>
@@ -98,8 +98,8 @@
     var radio = document.querySelectorAll("input[type='radio']");
     var question =<%-JSON.stringify(question)%>
 
-            for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } var correct = [] var
-        button = document.querySelector("button"); var radio = document.querySelectorAll("input[type='radio' ]");
+            for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } var correct = [];
+			var button = document.querySelector("button"); var radio = document.querySelectorAll("input[type='radio' ]");
     button.onclick = () => {
         var data = JSON.stringify(questions);
         var correctAns = 0;
