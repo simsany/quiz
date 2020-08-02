@@ -97,7 +97,6 @@
     var button = document.querySelector("button");
     var radio = document.querySelectorAll("input[type='radio']");
     var question =<%-JSON.stringify(question)%>
-	var form=document.querySelector("#myform");
             for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } 
 			var correct = [];
 			var button = document.querySelector("button"); var radio = document.querySelectorAll("input[type='radio' ]");
@@ -118,16 +117,16 @@
                         if (radio[n].checked) { correctAns++ } 
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-success");
-						
+						radio[n].checked=false;
+						radio[n].parentElement.blur();
                     } else if (radio[n].checked) {
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-danger");
-						
+						radio[n].checked=false;
+						radio[n].parentElement.blur();
                     }
                 } alert(`Az eredmenyed:
-                    ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`);
-					form.reset();
-					
+                    ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`)
             }
         });
         xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
