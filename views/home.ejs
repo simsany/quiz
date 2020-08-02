@@ -1,148 +1,142 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <title>Quiz</title>
 </head>
+
 <body>
 
-<div class="container" >
+    <div class="container">
 
-<h1 style="text-align:center"> Questions </h1><br><br>
-<div class="form-group">
-			<a style="width:15rem;" href="/show" class="btn btn-success btn-lg ">Question bank</a>&nbsp;&nbsp;
-			<a style="width:15rem;" href="/new" class="btn btn-success btn-lg ">Add new question</a>&nbsp;&nbsp;
-			<a style="width:15rem;" href="/" class="btn btn-success btn-lg ">New round</a>
-		</div>
+        <h1 style="text-align:center"> Questions </h1><br><br>
+        <div class="form-group">
+            <a style="width:15rem;" href="/show" class="btn btn-success btn-lg ">Question bank</a>&nbsp;&nbsp;
+            <a style="width:15rem;" href="/new" class="btn btn-success btn-lg ">Add new question</a>&nbsp;&nbsp;
+            <a style="width:15rem;" href="/" class="btn btn-success btn-lg ">New round</a>
+        </div>
 
 
-		<form class="col-lg-8" action="" method="POST">
-		<% var question=[]; for(let i=0;i<questions.length;i++){%>
-		<%question.push(questions[i].id)%>
-		
-		<div class="form-group">
-		<h2>Question <%=i+1%> .</h2>
-		
-		
-			<div>
-			<textarea class="form-control" type="text" name="quiz[text]" rows="8"  readonly ><%=questions[i].text%>
+        <form class="col-lg-8" action="" method="POST">
+            <% var question=[]; for(let i=0;i<questions.length;i++){%>
+            <%question.push(questions[i].id)%>
+
+            <div class="form-group">
+                <h2>Question <%=i+1%> .</h2>
+
+
+                <div>
+                    <textarea class="form-control" type="text" name="quiz[text]" rows="8" readonly><%=questions[i].text%>
 			</textarea>
-			<br>
-		</div>
+                    <br>
+                </div>
 
-		
-			<h2>Answers</h2>
-			<div  data-toggle="buttons">
-			
-			
-			
-			<label style="width:20rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[0]%>">
-			<input style="width: 8%; opacity: 0;" autocomplete="off" id="<%=questions[i].answers[0]%>" class="form-check-input with-gap" type="radio" name="<%=i%>">
-			
-			&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[0]%>
-		    </label>
-		<br>
-		
-			<label style="width:20rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[1]%>">
 
-		<input style="
-    width: 8%; opacity: 0;" id="<%=questions[i].answers[1]%>" autocomplete="off" class="form-check-input" type="radio" name="<%=i%>" >
-		&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[1]%></label><br>
-		
-		
-<label style="width:20rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[2]%>">
-
-		<input autocomplete="off"  style="
-    width: 8%; opacity: 0; "id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>" >
-		&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
-	
-		<label style="width:20rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
-		<input autocomplete="off" style="
-    width: 8%; opacity: 0;" id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>" >
-
-		&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
-		
-		
-</div>
-		</div>
-	
+                <h2>Answers</h2>
+                <div data-toggle="buttons">
 
 
 
-<%}%>
+                    <label style="width:20rem; margin-bottom:0.5rem"
+                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[0]%>">
+                        <input style="width: 8%; opacity: 0;" autocomplete="off" id="<%=questions[i].answers[0]%>"
+                            class="form-check-input with-gap" type="radio" name="<%=i%>">
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[0]%>
+                    </label>
+                    <br>
+
+                    <label style="width:20rem; margin-bottom:0.5rem"
+                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[1]%>">
+
+                        <input style="
+    width: 8%; opacity: 0;" id="<%=questions[i].answers[1]%>" autocomplete="off" class="form-check-input" type="radio"
+                            name="<%=i%>">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[1]%></label><br>
+
+
+                    <label style="width:20rem; margin-bottom:0.5rem"
+                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[2]%>">
+
+                        <input autocomplete="off" style="
+    width: 8%; opacity: 0; " id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>">
+                        &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
+
+                    <label style="width:20rem; margin-bottom:0.5rem"
+                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
+                        <input autocomplete="off" style="
+    width: 8%; opacity: 0;" id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>">
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
+
+
+                </div>
+            </div>
+
+
+
+
+            <%}%>
 
 
 <%if(questions.length){%>
-		<div class="form-group">
-			<button type="button" class="btn btn-success btn-lg ">Results</button>
-		</div>
-		<%}%>
+            <div class="form-group">
+                <button type="button" class="btn btn-success btn-lg ">Results</button>
+            </div>
+            <%}%>
 </form>
 </div>
 <script>
-var questions =[]
-var correct=[]
-var button=document.querySelector("button");
-var radio=document.querySelectorAll("input[type='radio']");
-var question=<%-JSON.stringify(question)%>
+    var questions = []
+    var correct = []
+    var button = document.querySelector("button");
+    var radio = document.querySelectorAll("input[type='radio']");
+    var question =<% -JSON.stringify(question) %>
 
-for(var i=0;i<radio.length/4;i++){
+            for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } var correct = [] var
+        button = document.querySelector("button"); var radio = document.querySelectorAll("input[type='radio' ]");
+    button.onclick = () => {
+        var data = JSON.stringify(questions);
+        var correctAns = 0;
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
 
-questions.push(question[i])}
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                correct = JSON.parse(this.responseText);
 
-
-
-
-var correct=[]
-var button=document.querySelector("button");
-var radio=document.querySelectorAll("input[type='radio']");
-button.onclick=()=>{var data = JSON.stringify(questions);
-var correctAns=0;
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    correct=JSON.parse(this.responseText);
-	
-  for(var n=0; n<radio.length;n++){
-if(radio[n].id==correct[parseInt(radio[n].name)]){
-
-if(radio[n].checked){correctAns++}
-console.log(radio[n].parentElement)
-radio[n].parentElement.classList.toggle("btn-warning");
-radio[n].parentElement.classList.toggle("btn-success");
-
-}else if(radio[n].checked){
-radio[n].parentElement.classList.toggle("btn-warning");
-radio[n].parentElement.classList.toggle("btn-danger");
-
-
-}
-}
-alert(`Az eredmenyed: ${((correctAns/(radio.length/4))*100).toFixed(2)}%`)
-}
-
-});
-
-xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
-xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-xhr.setRequestHeader("cache-control", "no-cache");
-
-
-xhr.send(data);
-
-
-}
-
-</script>
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+                for (var n = 0; n < radio.length; n++) {
+                    if (radio[n].id == correct[parseInt(radio[n].name)]) {
+                        if (radio[n].checked) { correctAns++ } console.log(radio[n].parentElement)
+                        radio[n].parentElement.classList.toggle("btn-warning");
+                        radio[n].parentElement.classList.toggle("btn-success");
+                    } else if (radio[n].checked) {
+                        radio[n].parentElement.classList.toggle("btn-warning");
+                        radio[n].parentElement.classList.toggle("btn-danger");
+                    }
+                } alert(`Az eredmenyed:
+                    ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`)
+            }
+        });
+        xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
+        xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("cache-control", "no-cache"); xhr.send(data);
+    } </script>
+                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+                        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+                        crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+                        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+                        crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+                        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+                        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
