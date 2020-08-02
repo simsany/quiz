@@ -108,6 +108,7 @@ xhr.addEventListener("readystatechange", function () {
 	
   for(var n=0; n<radio.length;n++){
 if(radio[n].id==correct[parseInt(radio[n].name)]){
+
 if(radio[n].checked){correctAns++}
 
 radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("green")
@@ -121,7 +122,7 @@ alert(`Az eredmenyed: ${((correctAns/(radio.length/4))*100).toFixed(2)}%`)
 
 });
 
-xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
+xhr.open("POST", "http://127.0.0.1:5500/answers");
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("cache-control", "no-cache");
 

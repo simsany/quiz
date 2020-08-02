@@ -76,10 +76,28 @@ var body=i.split(",")}
 	Question.find().where('_id').in(body).exec((err,found)=>{
 		if(err){console.log("errrrroooor")}
 		else{
+		
 		for(let k=0;k<found.length;k++){
-			correct.push(found[k].answers[0])}
-		}
+			
+			correct.push(found[k])}
+			var temp=[];
+			
+		for(let i=0;i<correct.length;i++){
+			for(let j=0;j<body.length;j++){
+				if(body[j]==correct[i].id){
+					
+					
+					temp[j]=correct[i].answers[0]
+					
+				}
+				
+				
+			}
+			
+			
+		}}
 	
+	correct=temp
 		res.send(correct)
 		
 	
@@ -151,4 +169,4 @@ function shuffle(array) {
 }
 
 
-app.listen(process.env.PORT)
+app.listen("5500","127.0.0.1")
