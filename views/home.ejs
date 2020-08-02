@@ -113,7 +113,7 @@
 
                 for (var n = 0; n < radio.length; n++) {
                     if (radio[n].id == correct[parseInt(radio[n].name)]) {
-                        if (radio[n].checked) { correctAns++ } console.log(radio[n].parentElement)
+                        if (radio[n].checked) { correctAns++ } 
                         radio[n].parentElement.classList.toggle("btn-warning");
                         radio[n].parentElement.classList.toggle("btn-success");
                     } else if (radio[n].checked) {
