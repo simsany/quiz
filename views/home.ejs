@@ -101,7 +101,7 @@
             for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } 
 			var correct = [];
 			var button = document.querySelector("button"); var radio = document.querySelectorAll("input[type='radio' ]");
-    button.onclick = () => {form.reset();
+    button.onclick = () => {
         var data = JSON.stringify(questions);
         var correctAns = 0;
         var xhr = new XMLHttpRequest();
@@ -125,7 +125,9 @@
 						
                     }
                 } alert(`Az eredmenyed:
-                    ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`)
+                    ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`);
+					form.reset();
+					
             }
         });
         xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
