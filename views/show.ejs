@@ -24,8 +24,8 @@
 		<% for(let i=0;i<questions.length;i++){%>
 		<form class="col-lg-8" action="/<%=questions[i].id%>?_method=DELETE" method="POST">
 		<div class="form-group">
-		<h2>Question</h2>
-			<textarea class="form-control" type="text" name="quiz[text]" rows="8" readonly><%=questions[i].text%> <%=i+1%></textarea><br><br>
+		<h2>Question <%=i+1%></h2>
+			<textarea class="form-control" type="text" name="quiz[text]" rows="8" readonly><%=questions[i].text%></textarea><br><br>
 		</div>
 
 		<div class="form-group">
