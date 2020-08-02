@@ -111,19 +111,20 @@
                 correct = JSON.parse(this.responseText);
 
                 for (var n = 0; n < radio.length; n++) {
-						
+						radio[n].parentElement.classList.remove("btn-success");
+						radio[n].parentElement.classList.remove("btn-danger");
+                        radio[n].parentElement.classList.add("btn-warning");
+						radio[n].parentElement.blur();
                     
 					if (radio[n].id == correct[parseInt(radio[n].name)]) {
                         if (radio[n].checked) { correctAns++ } 
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-success");
-						radio[n].checked=false;
-						radio[n].parentElement.blur();
+						
                     } else if (radio[n].checked) {
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-danger");
-						radio[n].checked=false;
-						radio[n].parentElement.blur();
+						
                     }
                 } alert(`Az eredmenyed:
                     ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`)
