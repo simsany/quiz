@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <title>Quiz</title>
 </head>
 <body>
@@ -14,9 +14,9 @@
 
 <h1 style="text-align:center"> Questions </h1><br><br>
 <div class="form-group">
-			<a href="/show" class="btn btn-success btn-lg ">Question bank</a>&nbsp;&nbsp;
-			<a href="/new" class="btn btn-success btn-lg ">Add new question</a>&nbsp;&nbsp;
-			<a href="/" class="btn btn-success btn-lg ">New round</a>
+			<a style="width:15rem;" href="/show" class="btn btn-success btn-lg ">Question bank</a>&nbsp;&nbsp;
+			<a style="width:15rem;" href="/new" class="btn btn-success btn-lg ">Add new question</a>&nbsp;&nbsp;
+			<a style="width:15rem;" href="/" class="btn btn-success btn-lg ">New round</a>
 		</div>
 
 
@@ -27,44 +27,47 @@
 		<div class="form-group">
 		<h2>Question <%=i+1%> .</h2>
 		
-		<div>
-			
+		
+			<div>
 			<textarea class="form-control" type="text" name="quiz[text]" rows="8"  readonly ><%=questions[i].text%>
 			</textarea>
 			<br>
 		</div>
 
-		<div class="form-group">
+		
 			<h2>Answers</h2>
+			<div  data-toggle="buttons">
 			
 			
-			<input style="
-    width: 8%;"
-    " id="<%=questions[i].answers[0]%>" class="form-check-input" type="radio" name="<%=i%>" >
-			<label for="<%=questions[i].answers[0]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[0]%></label>
+			
+			<label style="width:25rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[0]%>">
+			<input style="width: 8%; opacity: 0;" autocomplete="off" id="<%=questions[i].answers[0]%>" class="form-check-input with-gap" type="radio" name="<%=i%>">
+			
+			&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[0]%>
+		    </label>
 		<br>
-		</div>
-			
-<div class="form-group">
-		<input style="
-    width: 8%;" id="<%=questions[i].answers[1]%>" class="form-check-input" type="radio" name="<%=i%>" >
-		<label for="<%=questions[i].answers[1]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[1]%></label><br>
-		</div>
 		
+			<label style="width:25rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[1]%>">
 
-<div class="form-group">
 		<input style="
-    width: 8%; "id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>" >
-		<label for="<%=questions[i].answers[2]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
-		</div>
-		<div class="form-group">
-		<input style="
-    width: 8%;" id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>" >
-
-		<label for="<%=questions[i].answers[3]%>">&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
-		</div>
+    width: 8%; opacity: 0;" id="<%=questions[i].answers[1]%>" autocomplete="off" class="form-check-input" type="radio" name="<%=i%>" >
+		&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[1]%></label><br>
 		
+		
+<label style="width:25rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[2]%>">
 
+		<input autocomplete="off"  style="
+    width: 8%; opacity: 0; "id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>" >
+		&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
+	
+		<label style="width:25rem; margin-bottom:0.5rem" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
+		<input autocomplete="off" style="
+    width: 8%; opacity: 0;" id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>" >
+
+		&nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
+		
+		
+</div>
 		</div>
 	
 
@@ -110,13 +113,14 @@ xhr.addEventListener("readystatechange", function () {
 if(radio[n].id==correct[parseInt(radio[n].name)]){
 
 if(radio[n].checked){correctAns++}
-
-radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("white");
-radio[n].nextElementSibling.style.backgroundColor="green";
+console.log(radio[n].parentElement)
+radio[n].parentElement.classList.toggle("btn-warning");
+radio[n].parentElement.classList.toggle("btn-success");
 
 }else if(radio[n].checked){
-radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("white")
-radio[n].nextElementSibling.style.backgroundColor="red";
+radio[n].parentElement.classList.toggle("btn-warning");
+radio[n].parentElement.classList.toggle("btn-danger");
+
 
 }
 }
@@ -136,5 +140,9 @@ xhr.send(data);
 }
 
 </script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
 </body>
 </html>
