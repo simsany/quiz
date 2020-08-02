@@ -122,7 +122,7 @@ alert(`Az eredmenyed: ${((correctAns/(radio.length/4))*100).toFixed(2)}%`)
 
 });
 
-xhr.open("POST", "http://127.0.0.1:5500/answers");
+xhr.open("POST", "https://sanyiquiz.herokuapp.com/answers");
 xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("cache-control", "no-cache");
 
