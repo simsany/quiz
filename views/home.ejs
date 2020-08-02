@@ -120,9 +120,11 @@
                         if (radio[n].checked) { correctAns++ } 
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-success");
+						radio[n].checked=false;
                     } else if (radio[n].checked) {
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-danger");
+						radio[n].checked=false;
                     }
                 } alert(`Az eredmenyed:
                     ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`)
