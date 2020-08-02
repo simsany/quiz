@@ -114,11 +114,11 @@
                 for (var n = 0; n < radio.length; n++) {
                     if (radio[n].id == correct[parseInt(radio[n].name)]) {
                         if (radio[n].checked) { correctAns++ } 
-                        radio[n].parentElement.classList.toggle("btn-warning");
-                        radio[n].parentElement.classList.toggle("btn-success");
+                        radio[n].parentElement.classList.remove("btn-warning");
+                        radio[n].parentElement.classList.add("btn-success");
                     } else if (radio[n].checked) {
-                        radio[n].parentElement.classList.toggle("btn-warning");
-                        radio[n].parentElement.classList.toggle("btn-danger");
+                        radio[n].parentElement.classList.remove("btn-warning");
+                        radio[n].parentElement.classList.add("btn-danger");
                     }
                 } alert(`Az eredmenyed:
                     ${((correctAns / (radio.length / 4)) * 100).toFixed(2)}%`)
