@@ -111,10 +111,13 @@ if(radio[n].id==correct[parseInt(radio[n].name)]){
 
 if(radio[n].checked){correctAns++}
 
-radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("green")
+radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("white");
+radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.style.backgroundColor="green";
 
 }else if(radio[n].checked){
-radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("red")
+radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.innerHTML.fontcolor("white")
+radio[n].nextElementSibling.innerHTML=radio[n].nextElementSibling.style.backgroundColor="red";
+
 }
 }
 alert(`Az eredmenyed: ${((correctAns/(radio.length/4))*100).toFixed(2)}%`)
