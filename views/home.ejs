@@ -114,7 +114,7 @@
 						radio[n].parentElement.classList.remove("btn-success");
 						radio[n].parentElement.classList.remove("btn-danger");
                         radio[n].parentElement.classList.add("btn-warning");
-						radio[n].parentElement.blur();
+						radio[n].parentElement.classList.remove("btn-active")
                     
 					if (radio[n].id == correct[parseInt(radio[n].name)]) {
                         if (radio[n].checked) { correctAns++ } 
