@@ -26,11 +26,17 @@
             <% var question=[]; for(let i=0;i<questions.length;i++){%>
             <%question.push(questions[i].id)%>
 
+			<%if(i%2){%>
+			
+			<div style="background-color:rgba(220,220,220,0.8);margin-bottom:2.5rem;">
+			<%}else{%>
+			<div style="margin-bottom:2.5rem;">
+			<%}%>
+			
+			
             <div class="form-group">
                 <h2>Question <%=i+1%> .</h2>
 
-
-                <div>
                     <textarea class="form-control" type="text" name="quiz[text]" rows="8" readonly><%=questions[i].text%>
 			</textarea>
                     <br>
@@ -67,7 +73,7 @@
     width: 8%; opacity: 0; " id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>">
                         &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
 
-                    <label style="width:20rem; margin-bottom:0.5rem"
+                    <label style="width:20rem; margin-bottom:1rem;"
                         class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
                         <input autocomplete="off" style="
     width: 8%; opacity: 0;" id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>">
@@ -89,6 +95,7 @@
                 <button style="width:15rem;"type="button" class="btn btn-success btn-lg ">Results</button>
             </div>
             <%}%>
+			</div>
 </form>
 </div>
 <script>
