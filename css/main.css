@@ -1,0 +1,27 @@
+
+.selected{
+	
+    background-color: #79CDCD;
+    border:1px solid #79CDCD;
+	box-shadow:0px 0px;
+}
+.selected:hover{
+background-color: #79CDCD;
+border:1px solid #79CDCD;
+box-shadow:0px 0px;
+}
+
+#resultBtn{
+text-align:center; margin-top:3rem;
+	
+}
+
+#answers{width:20rem; 
+margin-bottom:0.5rem;}
+
+h1{
+	text-align:center; margin-bottom:3rem;
+	
+	
+}
+input[type='radio']{width: 8%; opacity: 0;}

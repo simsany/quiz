@@ -3,11 +3,11 @@ var bodyParse = require("body-parser");
 var mongoose = require("mongoose")
 var app = express();
 var cors = require("cors")
-
+const path = require('path');
 var Question = require("./models/question")
 
 var methodOverride = require("method-override");
-
+app.use(express.static(path.join(__dirname, 'css')));
 app.use(cors())
 app.use(methodOverride("_method"));
 app.use(bodyParse.urlencoded({ extended: true }));
@@ -182,4 +182,4 @@ function shuffle(array) {
 }
 
 
-app.listen(process.env.PORT)
+app.listen("5500","127.0.0.1")
