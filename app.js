@@ -182,4 +182,4 @@ function shuffle(array) {
 }
 
 
-app.listen(process.env.PORT)
+app.listen("5500","127.0.0.1")
