@@ -10,7 +10,12 @@ img{
  background-color:#26466D;
 }
 form{ margin-top:12rem;}
-
+@media (max-width: 900px) {
+  .btn {
+    font-size:0.95rem;
+    padding:4px 4px;
+  }
+}
 
 .selected{
 	color:white;
