@@ -33,7 +33,7 @@
 
 			<%if(i%2){%>
 			
-			<div style="background-color:rgba(220,220,220,0.8);margin-bottom:2.5rem;">
+			<div style="background-color:rgba(220,220,220,0.8);margin-bottom:2.5rem; width:100%">
 			<%}else{%>
 			<div style="margin-bottom:2.5rem;">
 			<%}%>
@@ -42,7 +42,7 @@
             <div class="form-group">
                 <h2>Question <%=i+1%> .</h2>
 
-                    <textarea class="form-control" type="text" name="quiz[text]" rows="10" readonly><%=questions[i].text%>
+                    <textarea class="form-control" type="text" name="quiz[text]"  rows="2" readonly><%=questions[i].text%>
 			</textarea>
                     <br>
                 </div>
@@ -102,6 +102,7 @@
             <%}%>
 </div>
 <script>
+var textAreas=document.querySelectorAll("textarea")
     var questions = []
     var correct = []
 	 var form = document.querySelector("#myform");
@@ -110,6 +111,15 @@
     var question =<%-JSON.stringify(question)%>
             for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } 
 			var correct = [];
+	for(let area of textAreas){
+	area.rows=area.innerHTML.split(/\r*\n/).length+2
+	}
+	
+	
+	
+			
+			
+			
 			var button = document.querySelector("button"); var radio = document.querySelectorAll("input[type='radio' ]");
    form.onclick=()=>{
    for(let elem of radio){
