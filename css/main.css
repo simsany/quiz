@@ -1,70 +1,70 @@
 img{
- margin-right:2rem;
-
- height:4.5rem;
- width:6rem;
- border-radius:5%;
- }
- .navbar{margin:0px;
- padding-top:1rem;
- background-color:#26466D;
+     margin-right:2rem;
+     height:4.5rem;
+     width:6rem;
+     border-radius:5%;
 }
-form{ margin-top:10rem;}
-@media (max-width: 900px) {
-	form{ margin-top:6rem;}
-  .btn {
-    font-size:0.95rem;
-    padding:4px 4px;
-  }
+ .navbar{
+    margin:0px;
+     padding-top:1rem;
+     background-color:#26466D;
 }
-
-.selected{
-	color:white;
-    background-color: #236B8E;
-    border:1px solid #236B8E;
-	box-shadow:0px 0px;
+ form{
+     margin-top:10rem;
 }
-.selected:hover{
-			color:white;
-background-color: #344152;
-border:1px solid #344152;
-box-shadow:0px 0px;
+ @media (max-width: 900px) {
+     form{
+         margin-top:6rem;
+    }
+     .btn {
+         font-size:0.95rem;
+         padding:4px 4px;
+    }
 }
-
-#resultBtn{
-text-align:center; margin-top:3rem;
-	
+ .selected{
+     color:white;
+     background-color: #236B8E;
+     border:1px solid #236B8E;
+     box-shadow:0px 0px;
 }
-
-#answers{width:25rem; 
-margin-bottom:0.5rem;
-max-width: 100%;
-word-wrap: break-word;}
-h1{
-	text-align:center; margin-bottom:3rem;
-	
-	
+ .selected:hover{
+     color:white;
+     background-color: #344152;
+     border:1px solid #344152;
+     box-shadow:0px 0px;
 }
-input[type='radio']{width: 8%; opacity: 0;}
-
-@media (min-width: 992px){
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
- opacity:0.4;
-  background-image: 
-    url(https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
-  background-size: cover;
-  background-repeat: no-repeat;
-background-position: center;}
-
-
-  
-
-
+ #resultBtn{
+     text-align:center;
+     margin-top:3rem;
 }
+ #answers{
+    width:25rem;
+     margin-bottom:0.5rem;
+     max-width: 100%;
+     word-wrap: break-word;
+}
+ h1{
+     text-align:center;
+     margin-bottom:3rem;
+}
+ input[type='radio']{
+    width: 8%;
+     opacity: 0;
+}
+ @media (min-width: 992px){
+     body::before {
+         content: '';
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 100%;
+         width: 100%;
+         z-index: -1;
+         opacity:0.4;
+         background-image: url(https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center;
+    }
+}
+ 
