@@ -53,8 +53,8 @@
 
 
 
-                    <label id="answers"
-                        class="btn btn-warning btn-rounded form-check-label " for="<%=questions[i].answers[0]%>">
+                    <label id="answers" 
+                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[0]%>">
                         <input  autocomplete="off" id="<%=questions[i].answers[0]%>"
                             class="form-check-input with-gap" type="radio" name="<%=i%>">
 
@@ -71,13 +71,13 @@
 
 
                     <label 
-                       id="answers" class=" btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[2]%>">
+                       id="answers" class=" btn  btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[2]%>">
 
                         <input autocomplete="off"  id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>">
                         &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
 
                     <label id="answers"
-                        class=" btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
+                        class=" btn  btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
                         <input autocomplete="off"  id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>">
 
                         &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
@@ -112,7 +112,7 @@ var textAreas=document.querySelectorAll("textarea")
             for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } 
 			var correct = [];
 	for(let area of textAreas){
-	area.rows=area.innerHTML.split(/\r*\n/).length+2
+	area.rows=area.innerHTML.split(/ *\n/).length
 	}
 	
 	
