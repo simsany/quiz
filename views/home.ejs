@@ -33,7 +33,7 @@
 
 			<%if(i%2){%>
 			
-			<div style="background-color:rgba(220,220,220,0.8);margin-bottom:2.5rem; width:100%">
+			<div style="background-color:rgba(220,220,220,0.8);margin-bottom:2.5rem; ">
 			<%}else{%>
 			<div style="margin-bottom:2.5rem;">
 			<%}%>
@@ -54,7 +54,7 @@
 
 
                     <label id="answers"
-                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[0]%>">
+                        class="btn btn-warning btn-rounded form-check-label col-xs-12" for="<%=questions[i].answers[0]%>">
                         <input  autocomplete="off" id="<%=questions[i].answers[0]%>"
                             class="form-check-input with-gap" type="radio" name="<%=i%>">
 
@@ -62,8 +62,8 @@
                     </label>
                     <br>
 
-                    <label id="answers"
-                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[1]%>">
+                    <label id="answers" 
+                        class=" col-xs-12 btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[1]%>">
 
                         <input id="<%=questions[i].answers[1]%>" autocomplete="off" class="form-check-input" type="radio"
                             name="<%=i%>">
@@ -71,13 +71,13 @@
 
 
                     <label 
-                       id="answers" class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[2]%>">
+                       id="answers" class="col-xs-12 btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[2]%>">
 
                         <input autocomplete="off"  id="<%=questions[i].answers[2]%>" class="form-check-input" type="radio" name="<%=i%>">
                         &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
 
                     <label id="answers"
-                        class="btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
+                        class="col-xs-12 btn btn-warning btn-rounded form-check-label" for="<%=questions[i].answers[3]%>">
                         <input autocomplete="off"  id="<%=questions[i].answers[3]%>" class="form-check-input" type="radio" name="<%=i%>">
 
                         &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
