@@ -112,7 +112,7 @@ var textAreas=document.querySelectorAll("textarea")
             for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } 
 			var correct = [];
 	for(let area of textAreas){
-	area.rows=area.innerHTML.split(/ *\n/).length+3
+	area.rows=area.innerHTML.split(/\n/).length+1
 	}
 	
 	
