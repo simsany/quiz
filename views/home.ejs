@@ -106,9 +106,12 @@ var textAreas=document.querySelectorAll("textarea")
     var questions = []
     var correct = []
 	 var form = document.querySelector("#myform");
+	 var nav=document.querySelector("nav");
     var button = document.querySelector("button");
     var radio = document.querySelectorAll("input[type='radio']");
     var question =<%-JSON.stringify(question)%>
+	
+	
             for (var i = 0; i < radio.length / 4; i++) { questions.push(question[i]) } 
 			var correct = [];
 	for(let area of textAreas){
