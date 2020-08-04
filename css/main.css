@@ -9,8 +9,9 @@ img{
  padding-top:1rem;
  background-color:#26466D;
 }
-form{ margin-top:8rem;}
+form{ margin-top:12rem;}
 @media (max-width: 900px) {
+	form{ margin-top:6rem;}
   .btn {
     font-size:0.95rem;
     padding:4px 4px;
