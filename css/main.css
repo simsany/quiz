@@ -60,6 +60,6 @@ background-position: center;}
   
 
 body::before {
-  
+  background-color:white;
 }
 }
