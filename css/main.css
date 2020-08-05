@@ -17,12 +17,14 @@ img{
          margin-top:6rem;
     }
      .btn {
-         font-size:0.8rem;
+         font-size:0.7rem;
          padding:4px 4px;
     }
 	#resultBtn{
      text-align:center;
      margin-top:3rem;
+	}
+	.button{font-size:0.9rem;
 	}
 }
  .selected{
