@@ -14,12 +14,12 @@ img{
 }
  @media (max-width: 900px) {
 	h2{
-		 font-size:0.9rem; 
+		 font-size:1.2rem; 
 	  
 	}
 
 	#textarea{
-		 font-size:1px; 
+		 font-size:0.73rem; 
 	  
 	}        
 
