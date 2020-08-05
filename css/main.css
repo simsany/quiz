@@ -20,6 +20,10 @@ img{
          font-size:0.95rem;
          padding:4px 4px;
     }
+	#resultBtn{
+     text-align:center;
+     margin-top:3rem;
+	}
 }
  .selected{
      color:white;
