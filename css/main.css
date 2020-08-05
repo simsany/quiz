@@ -14,12 +14,12 @@ img{
 }
  @media (max-width: 900px) {
 	h2{
-		 font-size:1.2rem; 
+		 font-size:0.9rem; 
 	  
 	}
 
 	#textarea{
-		 font-size:0.65rem; 
+		 font-size:0.8; 
 	  
 	}        
 
@@ -27,7 +27,7 @@ img{
          margin-top:4rem;
     }
      .btn {
-         font-size:0.8rem;
+         font-size:0.7rem;
          padding:4px 4px;
     }
 	#resultBtn{
