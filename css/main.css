@@ -1,13 +1,19 @@
+body{color:#111111;}
 img{
      margin-right:2rem;
      height:4.5rem;
      width:6rem;
      border-radius:5%;
 }
+
+#textarea{
+	font-weight:500;
+	  
+	}        
  .navbar{
     margin:0px;
      padding-top:1rem;
-     background-color:#26466D;
+     background-color:#001f3f;
 }
  form{
      margin-top:10rem;
@@ -23,41 +29,56 @@ img{
 	  
 	}        
 
+	
 	form{
          margin-top:4rem;
     }
      .btn {
          font-size:0.8rem;
          padding:4px 4px;
+		 
     }
 	#resultBtn{
      text-align:center;
      margin-top:3rem;
+	 background-color:#3D9970;
 	}
 	.button{font-size:0.7rem;
 	}
 }
+
+.button{
+	background-color:#3D9970;
+	
+	
+}
+
  .selected{
+	
      color:white;
-     background-color: #236B8E;
-     border:1px solid #236B8E;
+     background-color: #0074D9;
+     border:1px solid #0074D9;
      box-shadow:0px 0px;
 }
  .selected:hover{
      color:white;
-     background-color: #344152;
-     border:1px solid #344152;
+     background-color: #001f3f;
+     border:1px solid #001f3f;
      box-shadow:0px 0px;
 }
  #resultBtn{
      text-align:center;
-     margin-top:3rem;
+  
+	 background-color:#3D9970;
+	
 }
  #answers{
     width:25rem;
      margin-bottom:0.5rem;
      max-width: 100%;
      word-wrap: break-word;
+	 font-weight:500;
+	
 }
  h1{
      text-align:center;
