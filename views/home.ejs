@@ -157,7 +157,7 @@ var textAreas=document.querySelectorAll("textarea")
                         radio[n].parentElement.classList.add("btn-warning");
 						radio[n].parentElement.classList.remove("active");
                     
-					if (radio[n].parentElement.innerHTML.slice(24) == correct[parseInt(radio[n].name)]) {
+					if (radio[n].parentElement.innerText== correct[parseInt(radio[n].name)]) {
                         if (radio[n].checked) { correctAns++ } 
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-success");
