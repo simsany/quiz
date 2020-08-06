@@ -58,7 +58,7 @@
                         <input id="<%=questions[i].id+questions[i].answers[0]%>" autocomplete="off" 
                             class="form-check-input with-gap" type="radio" name="<%=i%>">
 
-                        &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[0]%>
+                       <%=questions[i].answers[0]%>
                     </label>
                     <br>
 
@@ -66,20 +66,20 @@
                         class="  btn btn-warning btn-rounded form-check-label" for="<%=questions[i].id+questions[i].answers[1]%>">
 
                         <input id="<%=questions[i].id+questions[i].answers[1]%>" autocomplete="off" class="form-check-input" type="radio" name="<%=i%>">
-                        &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[1]%></label><br>
+                        <%=questions[i].answers[1]%></label><br>
 
 
                     <label 
                        id="answers" class=" btn  btn-warning btn-rounded form-check-label" for="<%=questions[i].id+questions[i].answers[2]%>">
 
                         <input id="<%=questions[i].id+questions[i].answers[2]%>" autocomplete="off"  class="form-check-input" type="radio" name="<%=i%>">
-                        &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[2]%></label><br>
+                        <%=questions[i].answers[2]%></label><br>
 
                     <label id="answers"
                         class=" btn  btn-warning btn-rounded form-check-label" for="<%=questions[i].id+questions[i].answers[3]%>">
                         <input id="<%=questions[i].id+questions[i].answers[3]%>"autocomplete="off"  class="form-check-input" type="radio" name="<%=i%>">
 
-                    &nbsp;&nbsp;&nbsp;&nbsp;<%=questions[i].answers[3]%></label><br>
+                  <%=questions[i].answers[3]%></label><br>
 
 						</div>
                
@@ -151,14 +151,15 @@ var textAreas=document.querySelectorAll("textarea")
                 correct = JSON.parse(this.responseText);
 
                 for (var n = 0; n < radio.length; n++) {
+			
 						radio[n].parentElement.classList.remove("btn-success");
 						radio[n].parentElement.classList.remove("selected");
 						radio[n].parentElement.classList.remove("btn-danger");
                         radio[n].parentElement.classList.add("btn-warning");
 						radio[n].parentElement.classList.remove("active");
                     
-					if (radio[n].parentElement.innerText== correct[parseInt(radio[n].name)]) {
-                        if (radio[n].checked) { correctAns++ } 
+					if (radio[n].parentElement.getAttribute("for").slice(24)== correct[parseInt(radio[n].name)]) {
+                        if (radio[n].checked) { correctAns++ }
                         radio[n].parentElement.classList.remove("btn-warning");
                         radio[n].parentElement.classList.add("btn-success");
 						
