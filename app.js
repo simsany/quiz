@@ -8,7 +8,7 @@ var routes = require("./routes/index");
 var methodOverride = require("method-override");
 
 app.use(express.static(path.join(__dirname, 'css')));
-app.options('*', cors())
+
 app.use(cors())
 
 app.use(methodOverride("_method"));
