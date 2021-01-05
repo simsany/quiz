@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     Question.find({}, (err, foundQuestions) => {
         if (err) { console.log("werrerrer") } else {
 
-            if (foundQuestions.length <= 20) {
+            if (foundQuestions.length <= 40) {
 
                 for (let i = 0; i < foundQuestions.length; i++) {
 
