@@ -8,8 +8,9 @@ var routes = require("./routes/index");
 var methodOverride = require("method-override");
 
 app.use(express.static(path.join(__dirname, 'css')));
-app.use(cors())
 app.options('*', cors())
+app.use(cors())
+
 app.use(methodOverride("_method"));
 app.use(bodyParse.urlencoded({ extended: true }));
 mongoose.connect("mongodb+srv://sanyika:Nem99@cluster0.hg5xp.mongodb.net/orders?retryWrites=true&w=majority");

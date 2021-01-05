@@ -1,7 +1,8 @@
 var express = require("express");
 var router = new express.Router();
 var mongoose = require("mongoose");
-var Question = require("../models/question")
+var Question = require("../models/question
+
 
 
 
@@ -28,7 +29,7 @@ router.get("/", (req, res) => {
             else {
                 var selected = []
 
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < 40; i++) {
                     var rand = Math.floor(Math.random() * foundQuestions.length);
 
                     shuffle(foundQuestions[rand].answers)
