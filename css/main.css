@@ -9,6 +9,9 @@ img{
 #textarea{
 	font-weight:500;
 	resize:none;
+	
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+
 	  
 	}        
  .navbar{
@@ -104,5 +107,9 @@ img{
          background-repeat: no-repeat;
          background-position: center;
     }
+}
+
+textarea {
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
 }
  
