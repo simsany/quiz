@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
     Question.find({}, (err, foundQuestions) => {
         if (err) { console.log("werrerrer") } else {
 
-            if (foundQuestions.length <= 40) {
+            if (foundQuestions.length <= 10) {
 
                 for (let i = 0; i < foundQuestions.length; i++) {
 
@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
             else {
                 var selected = []
 
-                for (let i = 0; i < 40; i++) {
+                for (let i = 0; i < 10; i++) {
                     var rand = Math.floor(Math.random() * foundQuestions.length);
 
                     shuffle(foundQuestions[rand].answers)
