@@ -39,7 +39,7 @@ router.get("/", (req, res) => {
                 */
 				var selected = []
 				for (let i = 455; foundQuestions.length; i++) {
-                    var rand = Math.floor(Math.random() * foundQuestions.length);
+                    
 
                     shuffle(foundQuestions[i].answers)
 					selected.push(foundQuestions[i])
