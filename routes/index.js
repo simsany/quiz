@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
                 res.render("home.ejs", { questions: foundQuestions })
             }
             else {
-                /*var selected = []
+                var selected = []
 
                 for (let i = 0; i < 10; i++) {
                     var rand = Math.floor(Math.random() * foundQuestions.length);
@@ -36,16 +36,16 @@ router.get("/", (req, res) => {
                     selected.push(foundQuestions[rand])
                     foundQuestions.splice(rand, 1);
 
-                */
-				var selected = []
-				for (let i = 455; foundQuestions.length; i++) {
+                
+				/*var selected = []
+				for (let i = 455; i<foundQuestions.length; i++) {
                     
 
                     shuffle(foundQuestions[i].answers)
 					selected.push(foundQuestions[i])
 					
 
-				
+				*/
 				}
 
                 res.render("home.ejs", { questions: selected })
