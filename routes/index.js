@@ -46,7 +46,7 @@ router.get("/", (req, res) => {
 					
 
 				
-				}*/
+				}
 
                 res.render("home.ejs", { questions: selected })
             }*/
