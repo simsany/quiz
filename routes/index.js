@@ -11,7 +11,7 @@ var Question = require("../models/question")
 router.get("/", (req, res) => {
     Question.find({}, (err, foundQuestions) => {
         if (err) { console.log("werrerrer") } else {
-
+			
             if (foundQuestions.length <= 10) {
 
                 for (let i = 0; i < foundQuestions.length; i++) {
@@ -25,8 +25,9 @@ router.get("/", (req, res) => {
                 }
 
                 res.render("home.ejs", { questions: foundQuestions })
-           }
+            }
             else {
+				
                 var selected = []
 
                 for (let i = 0; i < 10; i++) {
@@ -34,10 +35,10 @@ router.get("/", (req, res) => {
 
                     shuffle(foundQuestions[rand].answers)
                     selected.push(foundQuestions[rand])
-                    foundQuestions.splice(rand, 1);
+				foundQuestions.splice(rand, 1);}
 
                 
-				var selected = []
+				/*var selected = []
 				for (let i = 455; i<foundQuestions.length; i++) {
                     
 
@@ -46,16 +47,16 @@ router.get("/", (req, res) => {
 					
 
 				
-				}
+				}*/
 
                 res.render("home.ejs", { questions: selected })
-            }
+            
 
 
 
         }
-    })
-}})
+    }
+})})
 
 
 
